@@ -1,7 +1,10 @@
 import React from "react"
+import { World, Cube } from "lingo3d-react"
 
 export const MyComponent = ({ name, booleanTest }) => {
     return (
-        <div style={{ background: booleanTest ? "yellow" : "none" }}>hello world, {name}</div>
+        <World>
+            <Cube animation={{ rotationY: [0, 90, 0] }} />
+        </World>
     )
 }
