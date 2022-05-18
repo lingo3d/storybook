@@ -16,4 +16,4 @@ export default {
   component: Circle
 }
 
-export const { General,Transform, InnerTransform,Display, Base} = makePrimitive(Circle, primitiveDefaults)
+export const { General,Transform, InnerTransform, Display, Base, Physics, Animation } = makePrimitive(Circle, primitiveDefaults)

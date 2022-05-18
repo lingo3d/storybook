@@ -16,4 +16,4 @@ export default {
   component: Plane
 }
 
-export const { General,Transform, InnerTransform,Display, Base} = makePrimitive(Plane, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, Base, Physics, Animation } = makePrimitive(Plane, primitiveDefaults)

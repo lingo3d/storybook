@@ -16,4 +16,4 @@ export default {
   component: Tetrahedron
 }
 
-export const { General,Transform, InnerTransform,Display, Base} = makePrimitive(Tetrahedron, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, Base, Physics, Animation } = makePrimitive(Tetrahedron, primitiveDefaults)

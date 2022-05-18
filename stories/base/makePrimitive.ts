@@ -1,95 +1,93 @@
-import { resolvePlugin } from "@babel/core"
-import { Primary } from "@storybook/addon-docs"
+import makePhysics from "./makePhysics"
 
-export default (Cube: any, primitiveDefaults: any) => {
+export default (Item: any, defaults: any) => {
 
-
-    const General = Cube.bind({})
+    const General = Item.bind({})
     General.args ={
-        name: primitiveDefaults.name,
-        id: primitiveDefaults.id
+        name: defaults.name,
+        id: defaults.id
     }
     
-    const Transform = Cube.bind({})
+    const Transform = Item.bind({})
     Transform.args = {
-        x: primitiveDefaults.x,
-        y: primitiveDefaults.y,
-        z: primitiveDefaults.z,
+        x: defaults.x ?? "",
+        y: defaults.y ?? "",
+        z: defaults.z ?? "",
 
-        scale: primitiveDefaults.scale,
-        scaleX: primitiveDefaults.scaleX,
-        scaleY: primitiveDefaults.scaleY,
-        scaleZ: primitiveDefaults.scaleZ,
+        scale: defaults.scale ?? "",
+        scaleX: defaults.scaleX ?? "",
+        scaleY: defaults.scaleY ?? "",
+        scaleZ: defaults.scaleZ ?? "",
         
-        rotationX: primitiveDefaults.rotationX,
-        rotationY: primitiveDefaults.rotationY,
-        rotationZ: primitiveDefaults.rotationZ
+        rotationX: defaults.rotationX ?? "",
+        rotationY: defaults.rotationY ?? "",
+        rotationZ: defaults.rotationZ ?? "",
     }
 
-    const InnerTransform = Cube.bind({})
+    const InnerTransform = Item.bind({})
     InnerTransform.args = {
-        innerX: primitiveDefaults.innerX,
-        innerY: primitiveDefaults.innerY,
-        innerZ: primitiveDefaults.innerZ,
+        innerX: defaults.innerX ?? "",
+        innerY: defaults.innerY ?? "",
+        innerZ: defaults.innerZ ?? "",
 
-        width: primitiveDefaults.width,
-        height: primitiveDefaults.height,
-        depth: primitiveDefaults.depth,
+        width: defaults.width ?? "",
+        height: defaults.height ?? "",
+        depth: defaults.depth ?? "",
 
-        innerRotationX: primitiveDefaults.innerRotationX,
-        innerRotationY: primitiveDefaults.innerRotationY,
-        innerRotationZ: primitiveDefaults.innerRotationZ
+        innerRotationX: defaults.innerRotationX ?? "",
+        innerRotationY: defaults.innerRotationY ?? "",
+        innerRotationZ: defaults.innerRotationZ ?? "",
     }
 
-    const Display = Cube.bind({})
+    const Display = Item.bind({})
     Display.args ={
-        bloom: primitiveDefaults.bloom,
-        reflection: primitiveDefaults.reflection,
-        outline: primitiveDefaults.outline,
-        visible: primitiveDefaults.visible,
-        innerVisible: primitiveDefaults.innerVisible,
-        frustumCulled: primitiveDefaults.frustumCulled,
-        metalnessFactor: primitiveDefaults.metalnessFactor,
-        roughnessFactor: primitiveDefaults.roughnessFactor,
-        environmentFactor: primitiveDefaults.environmentFactor,
-        toon: primitiveDefaults.toon,
-        pbr: primitiveDefaults.pbr
+        bloom: defaults.bloom ?? "",
+        reflection: defaults.reflection ?? "",
+        outline: defaults.outline ?? "",
+        visible: defaults.visible ?? "",
+        innerVisible: defaults.innerVisible ?? "",
+        frustumCulled: defaults.frustumCulled ?? "",
+        metalnessFactor: defaults.metalnessFactor ?? "",
+        roughnessFactor: defaults.roughnessFactor ?? "",
+        environmentFactor: defaults.environmentFactor ?? "",
+        toon: defaults.toon ?? "",
+        pbr: defaults.pbr ?? "",
     }
 
-    const Base = Cube.bind({})
+    const Base = Item.bind({})
     Base.args ={
-        color: primitiveDefaults.color,
-        vertexColors: primitiveDefaults.vertexColors,
-        fog: primitiveDefaults.fog,
-        opacity: primitiveDefaults.opacity,
-        texture: primitiveDefaults.texture,
-        videoTexture: primitiveDefaults.videoTexture,
-        alphaMap: primitiveDefaults.alphaMap,
-        textureRepeat: primitiveDefaults.textureRepeat,
-        flatShading: primitiveDefaults.flatShading,
-        wireframe: primitiveDefaults.wireframe,
-        envMap: primitiveDefaults.envMap,
-        aoMap: primitiveDefaults.aoMap,
-        aoMapIntensity: primitiveDefaults.aoMapIntensity,
-        bumpMap: primitiveDefaults.bumpMap,
-        bumpScale: primitiveDefaults.bumpScale,
-        displaycementMap: primitiveDefaults.displaycementMap,
-        displaycementScale: primitiveDefaults.displaycementScale,
-        displaycementBias: primitiveDefaults.displaycementBias,
-        emissiveColor: primitiveDefaults.emissiveColor,
-        emissiveMap: primitiveDefaults.emissiveMap,
-        emissiveIntensity: primitiveDefaults.emissiveIntensity,
-        metalnessMap: primitiveDefaults.metalnessMap,
-        metalness: primitiveDefaults.metalness,
-        roughnessMap: primitiveDefaults.roughnessMap,
-        roughness: primitiveDefaults.roughness,
-        normalMap: primitiveDefaults.normalMap,
-        normalScale: primitiveDefaults.normalScale,
-        normalMapType: primitiveDefaults.normalMapType
+        color: defaults.color ?? "",
+        vertexColors: defaults.vertexColors ?? "",
+        fog: defaults.fog ?? "",
+        opacity: defaults.opacity ?? "",
+        texture: defaults.texture ?? "",
+        videoTexture: defaults.videoTexture ?? "",
+        alphaMap: defaults.alphaMap ?? "",
+        textureRepeat: defaults.textureRepeat ?? "",
+        flatShading: defaults.flatShading ?? "",
+        wireframe: defaults.wireframe ?? "",
+        envMap: defaults.envMap ?? "",
+        aoMap: defaults.aoMap ?? "",
+        aoMapIntensity: defaults.aoMapIntensity ?? "",
+        bumpMap: defaults.bumpMap ?? "",
+        bumpScale: defaults.bumpScale ?? "",
+        displaycementMap: defaults.displaycementMap ?? "",
+        displaycementScale: defaults.displaycementScale ?? "",
+        displaycementBias: defaults.displaycementBias ?? "",
+        emissiveColor: defaults.emissiveColor ?? "",
+        emissiveMap: defaults.emissiveMap ?? "",
+        emissiveIntensity: defaults.emissiveIntensity ?? "",
+        metalnessMap: defaults.metalnessMap ?? "",
+        metalness: defaults.metalness ?? "",
+        roughnessMap: defaults.roughnessMap ?? "",
+        roughness: defaults.roughness ?? "",
+        normalMap: defaults.normalMap ?? "",
+        normalScale: defaults.normalScale ?? "",
+        normalMapType: defaults.normalMapType ?? "",
         
     }
 
-  
+    const Super = makePhysics(Item, defaults)
 
-    return { General, Transform, InnerTransform, Display, Base }
+    return { General, Transform, InnerTransform, Display, Base, ...Super }
 }
