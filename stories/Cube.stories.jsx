@@ -16,4 +16,4 @@ export default {
   component: Cube
 }
 
-export const { Transform, InnerTransform } = makePrimitive(Cube, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, Base } = makePrimitive(Cube, primitiveDefaults)

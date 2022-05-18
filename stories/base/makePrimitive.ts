@@ -1,4 +1,14 @@
+import { resolvePlugin } from "@babel/core"
+import { Primary } from "@storybook/addon-docs"
+
 export default (Cube: any, primitiveDefaults: any) => {
+
+
+    const General = Cube.bind({})
+    General.args ={
+        name: primitiveDefaults.name,
+        id: primitiveDefaults.id
+    }
     
     const Transform = Cube.bind({})
     Transform.args = {
@@ -31,5 +41,55 @@ export default (Cube: any, primitiveDefaults: any) => {
         innerRotationZ: primitiveDefaults.innerRotationZ
     }
 
-    return { Transform, InnerTransform }
+    const Display = Cube.bind({})
+    Display.args ={
+        bloom: primitiveDefaults.bloom,
+        reflection: primitiveDefaults.reflection,
+        outline: primitiveDefaults.outline,
+        visible: primitiveDefaults.visible,
+        innerVisible: primitiveDefaults.innerVisible,
+        frustumCulled: primitiveDefaults.frustumCulled,
+        metalnessFactor: primitiveDefaults.metalnessFactor,
+        roughnessFactor: primitiveDefaults.roughnessFactor,
+        environmentFactor: primitiveDefaults.environmentFactor,
+        toon: primitiveDefaults.toon,
+        pbr: primitiveDefaults.pbr
+    }
+
+    const Base = Cube.bind({})
+    Base.args ={
+        color: primitiveDefaults.color,
+        vertexColors: primitiveDefaults.vertexColors,
+        fog: primitiveDefaults.fog,
+        opacity: primitiveDefaults.opacity,
+        texture: primitiveDefaults.texture,
+        videoTexture: primitiveDefaults.videoTexture,
+        alphaMap: primitiveDefaults.alphaMap,
+        textureRepeat: primitiveDefaults.textureRepeat,
+        flatShading: primitiveDefaults.flatShading,
+        wireframe: primitiveDefaults.wireframe,
+        envMap: primitiveDefaults.envMap,
+        aoMap: primitiveDefaults.aoMap,
+        aoMapIntensity: primitiveDefaults.aoMapIntensity,
+        bumpMap: primitiveDefaults.bumpMap,
+        bumpScale: primitiveDefaults.bumpScale,
+        displaycementMap: primitiveDefaults.displaycementMap,
+        displaycementScale: primitiveDefaults.displaycementScale,
+        displaycementBias: primitiveDefaults.displaycementBias,
+        emissiveColor: primitiveDefaults.emissiveColor,
+        emissiveMap: primitiveDefaults.emissiveMap,
+        emissiveIntensity: primitiveDefaults.emissiveIntensity,
+        metalnessMap: primitiveDefaults.metalnessMap,
+        metalness: primitiveDefaults.metalness,
+        roughnessMap: primitiveDefaults.roughnessMap,
+        roughness: primitiveDefaults.roughness,
+        normalMap: primitiveDefaults.normalMap,
+        normalScale: primitiveDefaults.normalScale,
+        normalMapType: primitiveDefaults.normalMapType
+        
+    }
+
+  
+
+    return { General, Transform, InnerTransform, Display, Base }
 }
