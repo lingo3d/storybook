@@ -17,5 +17,5 @@ export default {
   component: Model,
 }
 
-export const {ILoaded} = makeILoaded(Model,primitiveDefaults)
+export const {ILoaded,IObjectManager,SimpleObjectManager,IPhysics,IAnimation} = makeILoaded(Model,primitiveDefaults)
 
