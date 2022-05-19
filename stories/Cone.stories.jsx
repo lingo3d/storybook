@@ -16,4 +16,4 @@ export default {
   component: Cone
 }
 
-export const { General,Transform, InnerTransform,Display, Base, Physics, Animation } = makePrimitive(Cone, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics, Animation } = makePrimitive(Cone, primitiveDefaults)

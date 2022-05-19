@@ -24,7 +24,6 @@ export default (Item: any, defaults: any) => {
         physicsShape: defaults.physicsShape ?? "",
     }
 
-    const Super = makeAnimation(Item, defaults)
 
-    return { Physics, ...Super }
+    return { Physics}
 }

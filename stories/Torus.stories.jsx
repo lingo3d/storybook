@@ -16,4 +16,4 @@ export default {
   component: Torus
 }
 
-export const { General,Transform, InnerTransform,Display, Base, Physics, Animation } = makePrimitive(Torus, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics, Animation } = makePrimitive(Torus, primitiveDefaults)

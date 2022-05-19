@@ -16,4 +16,4 @@ export default {
   component: Cube
 }
 
-export const { General,Transform, InnerTransform,Display, Base, Physics, Animation } = makePrimitive(Cube, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics, Animation } = makePrimitive(Cube, primitiveDefaults)

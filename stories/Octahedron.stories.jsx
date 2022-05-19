@@ -16,4 +16,4 @@ export default {
   component: Octahedron
 }
 
-export const { General,Transform, InnerTransform,Display, Base, Physics, Animation } = makePrimitive(Octahedron, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics, Animation } = makePrimitive(Octahedron, primitiveDefaults)

@@ -54,8 +54,8 @@ export default (Item: any, defaults: any) => {
         pbr: defaults.pbr ?? "",
     }
 
-    const Base = Item.bind({})
-    Base.args ={
+    const ShaderEditor = Item.bind({})
+    ShaderEditor.args ={
         color: defaults.color ?? "",
         vertexColors: defaults.vertexColors ?? "",
         fog: defaults.fog ?? "",
@@ -89,5 +89,5 @@ export default (Item: any, defaults: any) => {
 
     const Super = makePhysics(Item, defaults)
 
-    return { General, Transform, InnerTransform, Display, Base, ...Super }
+    return { General, Transform, InnerTransform, Display, ShaderEditor, ...Super }
 }
