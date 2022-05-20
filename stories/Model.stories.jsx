@@ -3,19 +3,17 @@ import React from "react"
 import { World, Model as LingoComponent } from "lingo3d-react"
 import makeILoaded from "./base/makeILoaded"
 
-
 const Model = props => {
     return (
         <World>
-            <LingoComponent  {...props} />
+            <LingoComponent {...props} />
         </World>
     )
 }
 
 export default {
   title: "Model/Model",
-  component: Model,
+  component: Model
 }
 
-export const {ILoaded,IObjectManager,SimpleObjectManager,IPhysics,IAnimation} = makeILoaded(Model,primitiveDefaults)
-
+export const {ILoaded,IObjectManager,SimpleObjectManager,IPhysics,IAnimation,IEventLoop} = makeILoaded(Model, primitiveDefaults)

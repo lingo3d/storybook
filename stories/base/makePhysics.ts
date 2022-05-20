@@ -1,7 +1,4 @@
-import makeAnimation from "./makeAnimation"
-
 export default (Item: any, defaults: any) => {
-
     const Physics = Item.bind({})
     Physics.args ={
         maxAngularVelocityX: defaults.maxAngularVelocityX ?? "",

@@ -16,4 +16,4 @@ export default {
   component: Cylinder
 }
 
-export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics, Animation } = makePrimitive(Cylinder, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics } = makePrimitive(Cylinder, primitiveDefaults)

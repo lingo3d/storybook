@@ -16,4 +16,4 @@ export default {
   component: Sphere
 }
 
-export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics, Animation } = makePrimitive(Sphere, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, ShaderEditor, Physics } = makePrimitive(Sphere, primitiveDefaults)
