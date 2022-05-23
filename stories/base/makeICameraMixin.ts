@@ -13,5 +13,6 @@ export default (Item: any, defaults: any) => {
         minPolarAngle: 0,
         maxPolarAngle: 0,
     }
+   
     return {ICameraMixin} 
 }
