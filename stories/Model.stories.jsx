@@ -6,7 +6,7 @@ import makeILoaded from "./base/makeILoaded"
 const Model = props => {
     return (
         <World>
-            <LingoComponent {...props} />
+            <LingoComponent {...props} src="https://unpkg.com/lingo3d-dummy@1.0.0/assets/ybot.fbx" />
         </World>
     )
 }

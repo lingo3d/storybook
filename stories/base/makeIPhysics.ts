@@ -6,19 +6,21 @@ export default (Item: any, defaults: any) => {
         maxAngularVelocityX:{
             control: "number",
             defaultValue:0,
+            description: "X轴最大角速度",
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                    summary: "number" ,
                   },
                 defaultValue: { summary: "0" ,},
               }
         } ,
         maxAngularVelocityY:{
             control: "number",
+            description: "Y轴最大角速度",
             defaultValue:0,
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                  summary: "number" ,
                   },
                 defaultValue: { summary: "0" ,},
               }
@@ -26,9 +28,10 @@ export default (Item: any, defaults: any) => {
         maxAngularVelocityZ:{
             control: "number",
             defaultValue:0,
+            description: "Z轴最大角速度",
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                  summary: "number" ,
                   },
                 defaultValue: { summary: "0" ,},
               }
@@ -36,9 +39,10 @@ export default (Item: any, defaults: any) => {
         maxVelocityX:{
             control: "number",
             defaultValue:0,
+            description: "X轴最大速度",
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                  summary: "number" ,
                   },
                 defaultValue: { summary: "0" ,},
               }
@@ -46,9 +50,10 @@ export default (Item: any, defaults: any) => {
         maxVelocityY:{
             control: "number",
             defaultValue:0,
+            description: "Y轴最大速度",
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                  summary: "number" ,
                   },
                 defaultValue: { summary: "0" ,},
               }
@@ -56,26 +61,58 @@ export default (Item: any, defaults: any) => {
         maxVelocityZ:{
             control: "number",
             defaultValue:0,
+            description: "Z轴最大速度",
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                  summary: "number" ,
                   },
                 defaultValue: { summary: "0" ,},
               }
         } ,
         velocity:{
-            x: 0,
-            y:0,
-            z: 0,
+          control: "number",
+          defaultValue:0,
+          description: "移动速度，分别 x y z 三个轴。例如:velocity.x=10",
+          table: {
+              type: { 
+                summary: "number",
+                },
+              defaultValue: { summary: "0" ,},
+            }
         },
-        noTumble:false ,
-        slippery:false ,
+        noTumble:{
+          control:{
+            type:'boolean',
+        },
+        description: "物体直立不倒",
+        defaultValue: false,
+        table: {
+            type: { 
+                summary: 'boolean' ,
+              },
+            defaultValue: { summary: "false",},
+          }
+        } ,
+        slippery:{
+          control:{
+            type:'boolean',
+        },
+        description: "光滑",
+        defaultValue: false,
+        table: {
+            type: { 
+                summary: 'boolean' ,
+              },
+            defaultValue: { summary: "false",},
+          }
+        } ,
         mass:{
             control: "number",
             defaultValue:0,
+            description: "质量",
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                    summary: "number", 
                   },
                 defaultValue: { summary: "0" ,},
               }
@@ -83,21 +120,32 @@ export default (Item: any, defaults: any) => {
         physicsGroup :{
             control: "number",
             defaultValue:0,
+            description: "物理组",
             table: {
                 type: { 
-                    // summary: 'true="orbit" | false = "stationary"' ,
+                    summary: 'number' ,
                   },
                 defaultValue: { summary: "0" ,},
               }
         },
-        ignorePhysicsGroups: [0,1,2,3,4,5],
+        ignorePhysicsGroups:{
+          control: "number",
+            defaultValue:0,
+            description: "忽略物理组",
+            table: {
+                type: { 
+                    summary: 'number' ,
+                  },
+                defaultValue: { summary: "0" ,},
+              }
+        },
         physics:{
             control:{
                 options: ["2d" , "map" , "map-debug" , "character"],
-                 type: 'radio'
+                 type: 'select'
             } ,
             defaultValue:false,
-            description: "physics Model have '2d' , 'map' , 'map-debug' , 'character'",
+            description: "物理包含两种模式一种是'2d' , 'map' , 'map-debug' , 'character'。另一种是 boolean的true开启false关闭，两种之间不产生作用 ",
             table: {
                 type: { 
                     summary: 'string' ,
@@ -105,9 +153,6 @@ export default (Item: any, defaults: any) => {
                 defaultValue: { summary: "false(close)" ,},
               }
         } ,
-        physicsShape:{
-            control: "",
-        },
     }
     const IAnimation = makeIAnimation(Item,defaults)
     return {IPhysics, ...IAnimation}
