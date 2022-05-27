@@ -46,13 +46,13 @@ export default (Item: any, defaults: any) => {
                 type:'number',
                 step:0.1
             },
-            defaultValue:1.1,
+            defaultValue:10000.00,
             description: "视角远",
             table: {
                 type: { 
                     summary: 'number' ,
                   },
-                defaultValue: { summary: "1" ,},
+                defaultValue: { summary: "10000.00" ,},
               }
         },
         active: {
@@ -85,65 +85,67 @@ export default (Item: any, defaults: any) => {
             control:{
                 type:'number',
             },
-            defaultValue:0,
+            defaultValue:1,
             description: "背景虚化强度",
             table: {
                 type: { 
                     summary: 'number' ,
                   },
-                defaultValue: { summary: "0" ,},
+                defaultValue: { summary: "1" ,},
               }
         },
         bokehMaxBlur: {
             control:{
                 type:'number',
+                step:0.1
             },
-            defaultValue:0,
+            defaultValue:0.1,
             description: "背景虚化最大虚化度",
             table: {
                 type: { 
                     summary: 'number' ,
                   },
-                defaultValue: { summary: "0" ,},
+                defaultValue: { summary: "0.1" ,},
               }
         },
         bokehAperture: {
             control:{
                 type:'number',
+                step:0.1
             },
-            defaultValue:0,
+            defaultValue:0.3,
             description: "背景虚化光圈",
             table: {
                 type: { 
                     summary: 'number' ,
                   },
-                defaultValue: { summary: "0" ,},
+                defaultValue: { summary: "0.3" ,},
               }
         },
         minPolarAngle: {
             control:{
                 type:'number',
             },
-            defaultValue:0,
+            defaultValue:5,
             description: "最小极角",
             table: {
                 type: { 
                     summary: 'number' ,
                   },
-                defaultValue: { summary: "0" ,},
+                defaultValue: { summary: "5" ,},
               }
         },
         maxPolarAngle: {
             control:{
                 type:'number',
             },
-            defaultValue:360,
+            defaultValue:175,
             description: "最大极角",
             table: {
                 type: { 
                     summary: 'number' ,
                   },
-                defaultValue: { summary: "360" ,},
+                defaultValue: { summary: "175" ,},
               }
         },
     }

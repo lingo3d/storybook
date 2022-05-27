@@ -12,8 +12,8 @@ const Cube = props => {
 }
 
 export default {
-  title: "primitives/Cube",
+  title: "primitives原始模型/Cube",
   component: Cube
 }
 
-export const { General,Transform, InnerTransform,Display, ShaderEditor } = makePrimitive(Cube, primitiveDefaults)
+export const { General,Transform, InnerTransform,Display, ShaderEditor,Physics } = makePrimitive(Cube, primitiveDefaults)

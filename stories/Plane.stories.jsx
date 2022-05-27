@@ -12,7 +12,7 @@ const Plane = props => {
 }
 
 export default {
-  title: "primitives/Plane",
+  title: "primitives原始模型/Plane",
   component: Plane
 }
 

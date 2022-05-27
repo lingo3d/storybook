@@ -12,7 +12,7 @@ const Sphere = props => {
 }
 
 export default {
-  title: "primitives/Sphere",
+  title: "primitives原始模型/Sphere",
   component: Sphere
 }
 

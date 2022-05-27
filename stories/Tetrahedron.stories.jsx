@@ -12,7 +12,7 @@ const Tetrahedron = props => {
 }
 
 export default {
-  title: "primitives/Tetrahedron",
+  title: "primitives原始模型/Tetrahedron",
   component: Tetrahedron
 }
 

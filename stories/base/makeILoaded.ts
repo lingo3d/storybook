@@ -37,13 +37,13 @@ export default (Item: any, defaults: any) => {
             control:{
                 type:'boolean',
             },
-            description: "模型显示",
-            defaultValue: true,
+            description: "模型盒显示",
+            defaultValue: false,
             table: {
                 type: { 
                     summary: 'boolean' ,
                   },
-                defaultValue: { summary: "true",},
+                defaultValue: { summary: "false",},
               }
         },
     }

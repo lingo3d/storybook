@@ -12,7 +12,7 @@ const Torus = props => {
 }
 
 export default {
-  title: "primitives/Torus",
+  title: "primitives原始模型/Torus",
   component: Torus
 }
 

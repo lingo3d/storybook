@@ -6,13 +6,13 @@ import { World, Cone as LingoComponent } from "lingo3d-react"
 const Cone = props => {
     return (
         <World>
-            <LingoComponent {...props} />
+            <LingoComponent {...props}  />
         </World>
     )
 }
 
 export default {
-  title: "primitives/Cone",
+  title: "primitives原始模型/Cone",
   component: Cone
 }
 

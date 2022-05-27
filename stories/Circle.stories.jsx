@@ -12,7 +12,7 @@ const Circle = props => {
 }
 
 export default {
-  title: "primitives/Circle",
+  title: "primitives原始模型/Circle",
   component: Circle
 }
 

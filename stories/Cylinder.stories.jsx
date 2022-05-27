@@ -12,7 +12,7 @@ const Cylinder = props => {
 }
 
 export default {
-  title: "primitives/Cylinder",
+  title: "primitives原始模型/Cylinder",
   component: Cylinder
 }
 
